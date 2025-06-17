@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mythic Polymath Year</title>
+<style>
+  body {margin:0; font-family: "Segoe UI", sans-serif; color:#e0dacc; background:#121210; overflow-x:hidden;}
+  nav {position:fixed; top:1rem; right:2rem; z-index:10;}
+  nav button {background:rgba(224,218,204,0.15); border:none; margin:0 .5rem; padding:.5rem 1rem;
+    color:#e0dacc; cursor:pointer; font-size:0.9rem; transition: background 0.3s;}
+  nav button:hover {background:rgba(224,218,204,0.35);}
+  section {min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:2rem; position:relative; transition: background-color 1s ease;}
+  section::after {content:""; position:absolute; top:0; left:0; right:0; bottom:0;
+    background:url('https://www.transparenttextures.com/patterns/asfalt-dark.png') repeat;
+    opacity:0.05; pointer-events:none;}
+  h1 {font-size:2.5rem; letter-spacing:.1rem; text-shadow: 1px 1px 4px #000;}
+  p {max-width:600px; line-height:1.6; margin-top:1rem;}
+  .fade-in {opacity:0; transform: translateY(20px); animation:fadeIn 1s forwards;}
+  @keyframes fadeIn {to {opacity:1; transform: translateY(0);} }
+</style>
+</head>
+<body>
+
+<nav>
+  <button data-target="butoh">Butoh</button>
+  <button data-target="bookbinding">Bookbinding</button>
+  <button data-target="dream">Dream Mapping</button>
+  <button data-target="fermentation">Fermentation</button>
+  <button data-target="voice">Voicework</button>
+  <button data-target="synthesis">Synthesis</button>
+</nav>
+
+<section id="butoh"><div class="fade-in"><h1>Butoh</h1><p>Month 1–2: Embodied shadow work.</p></div></section>
+<section id="bookbinding"><div class="fade-in"><h1>Bookbinding</h1><p>Month 3–4: Codex creation ritual.</p></div></section>
+<section id="dream"><div class="fade-in"><h1>Dream Mapping</h1><p>Month 5–6: Oneironaut exploration.</p></div></section>
+<section id="fermentation"><div class="fade-in"><h1>Fermentation</h1><p>Month 7–8: Microbial alchemy.</p></div></section>
+<section id="voice"><div class="fade-in"><h1>Voicework</h1><p>Month 9–10: Spoken-word ritual.</p></div></section>
+<section id="synthesis"><div class="fade-in"><h1>Synthesis</h1><p>Month 11–12: Showcase & public grimoire.</p></div></section>
+
+<script>
+  document.querySelectorAll('nav button').forEach(btn =>
+    btn.addEventListener('click', () =>
+      document.getElementById(btn.dataset.target).scrollIntoView({behavior:'smooth'})));
+
+  const opts = {threshold: .3};
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.querySelector('.fade-in').classList.add('visible');
+    });
+  }, opts);
+  document.querySelectorAll('section').forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
+index.html
