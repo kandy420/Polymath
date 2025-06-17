@@ -1,58 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mythic Polymath Year</title>
-<style>
-  body {margin:0; font-family: "Segoe UI", sans-serif; color:#e0dacc; background:#121210; overflow-x:hidden;}
-  nav {position:fixed; top:1rem; right:2rem; z-index:10;}
-  nav button {background:rgba(224,218,204,0.15); border:none; margin:0 .5rem; padding:.5rem 1rem;
-    color:#e0dacc; cursor:pointer; font-size:0.9rem; transition: background 0.3s;}
-  nav button:hover {background:rgba(224,218,204,0.35);}
-  section {min-height:100vh; display:flex; align-items:center; justify-content:center;
-    padding:2rem; position:relative; transition: background-color 1s ease;}
-  section::after {content:""; position:absolute; top:0; left:0; right:0; bottom:0;
-    background:url('https://www.transparenttextures.com/patterns/asfalt-dark.png') repeat;
-    opacity:0.05; pointer-events:none;}
-  h1 {font-size:2.5rem; letter-spacing:.1rem; text-shadow: 1px 1px 4px #000;}
-  p {max-width:600px; line-height:1.6; margin-top:1rem;}
-  .fade-in {opacity:0; transform: translateY(20px); animation:fadeIn 1s forwards;}
-  @keyframes fadeIn {to {opacity:1; transform: translateY(0);} }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mythic Polymath in Motion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #1a1a1a;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: #2c2c2c;
+      text-align: center;
+      border-bottom: 1px solid #444;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #d6b67c;
+      margin: 0;
+      animation: flicker 4s infinite ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #b0a089;
+      margin-top: 0.5rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section:nth-child(even) {
+      background-color: #252525;
+    }
+
+    .section h2 {
+      color: #e0cba8;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .chaos {
+      font-family: "Courier New", monospace;
+      font-size: 1rem;
+      color: #a37d9b;
+      margin-top: 2rem;
+      border-top: 1px dashed #666;
+      padding-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1c1c1c;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    a {
+      color: #c7a968;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    ::selection {
+      background: #3e2c1f;
+      color: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <button data-target="butoh">Butoh</button>
-  <button data-target="bookbinding">Bookbinding</button>
-  <button data-target="dream">Dream Mapping</button>
-  <button data-target="fermentation">Fermentation</button>
-  <button data-target="voice">Voicework</button>
-  <button data-target="synthesis">Synthesis</button>
-</nav>
+  <header>
+    <h1>Mythic Polymath in Motion</h1>
+    <p>Live rituals. Sensory craft. Intellectual fire. You in fluid motion.</p>
+  </header>
 
-<section id="butoh"><div class="fade-in"><h1>Butoh</h1><p>Month 1–2: Embodied shadow work.</p></div></section>
-<section id="bookbinding"><div class="fade-in"><h1>Bookbinding</h1><p>Month 3–4: Codex creation ritual.</p></div></section>
-<section id="dream"><div class="fade-in"><h1>Dream Mapping</h1><p>Month 5–6: Oneironaut exploration.</p></div></section>
-<section id="fermentation"><div class="fade-in"><h1>Fermentation</h1><p>Month 7–8: Microbial alchemy.</p></div></section>
-<section id="voice"><div class="fade-in"><h1>Voicework</h1><p>Month 9–10: Spoken-word ritual.</p></div></section>
-<section id="synthesis"><div class="fade-in"><h1>Synthesis</h1><p>Month 11–12: Showcase & public grimoire.</p></div></section>
+  <section class="section">
+    <h2>🌿 Monthly Zine Ritual</h2>
+    <p>A printed map of your archetypal drift. Each zine is a tactile container for your myth, your learning, and your lineage.</p>
+    <div class="chaos">Coming soon: Downloadable PDFs, print layouts, and ink-stained chaos</div>
+  </section>
 
-<script>
-  document.querySelectorAll('nav button').forEach(btn =>
-    btn.addEventListener('click', () =>
-      document.getElementById(btn.dataset.target).scrollIntoView({behavior:'smooth'})));
+  <section class="section">
+    <h2>🌀 Voicework & Spoken Word</h2>
+    <p>Ritual scripts. Breath. Tone. Silence. Your voice as a conjuring tool — recordings, improvisations, mantras. This is your spellbook in motion.</p>
+  </section>
 
-  const opts = {threshold: .3};
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting) e.target.querySelector('.fade-in').classList.add('visible');
-    });
-  }, opts);
-  document.querySelectorAll('section').forEach(s => io.observe(s));
-</script>
+  <section class="section">
+    <h2>🌊 Dream Mapping</h2>
+    <p>Track recurring symbols, liminal figures, and dream logic with annotated maps. Turn subconscious fragments into mythic structure.</p>
+  </section>
+
+  <section class="section">
+    <h2>🧪 Fermentation Alchemy</h2>
+    <p>Kimchi, wild mead, miso, black garlic. Slowness, mold, and transformation as living metaphor. Controlled rot as sacred time.</p>
+  </section>
+
+  <footer>
+    made by manya kadian 🐚 myth-weaver ✦ hosted on <a href="https://github.com/kandy420/Polymath" target="_blank">github</a>
+  </footer>
 
 </body>
 </html>
-index.html
